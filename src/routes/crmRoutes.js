@@ -12,19 +12,19 @@ router.get('/', loginRequired, (req,res) => {
     getContacts(req,res);
 })
 
-router.get('/:contactID', (req,res) => {
+router.get('/:contactID', loginRequired, (req,res) => {
     getContactByID(req,res);
 })
 
-router.post('/', (req,res) => {
+router.post('/', loginRequired, (req,res) => {
     addNewContact(req,res);
 })
 
-router.put('/:contactID', (req,res) => {
+router.put('/:contactID', loginRequired, (req,res) => {
     updateContactByID(req,res);
 })
 
-router.delete('/:contactID', (req,res) => {
+router.delete('/:contactID', loginRequired, (req,res) => {
     deleteContactByID(req,res);
 })
 
